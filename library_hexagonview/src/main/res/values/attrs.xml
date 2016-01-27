@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--带圆角的正六边形-->
+    <declare-styleable name="HexagonView">
+        <attr name="hexagonText" format="string"/>
+        <attr name="hexagonTextSize" format="dimension"/>
+        <attr name="hexagonTextColor" format="color"/>
+        <attr name="hexagonBorderWidth" format="dimension"/>
+        <attr name="hexagonBorderColor" format="color"/>
+        <attr name="hexagonFillColor" format="color"/>
+        <attr name="hexagonCorner" format="dimension"/>
+        <attr name="hexagonBreakLineCount" format="integer"/>
+        <attr name="hexagonMaxLine" format="integer"/>
+        <attr name="hexagonTextSpacing" format="dimension"/>
+        <attr name="hexagonBorderOverlay" format="boolean"/>
+        <attr name="hexagonOrientation">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#737373"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:stretchColumns="2">
+
+            <TableRow
+                android:gravity="center"
+                android:minHeight="20dp">
+
+                <TextView
+                    android:text="textSize"
+                    android:textColor="#FFF"/>
+
+                <TextView
+                    android:id="@+id/tv_textSize"
+                    android:layout_marginLeft="10dp"
+                    android:text="3sp"
+                    android:textColor="#FFF"/>
+
+                <SeekBar android:id="@+id/sb_textSize"/>
+            </TableRow>
+
+            <TableRow
+                android:gravity="center"
+                android:minHeight="20dp">
+
+                <TextView
+                    android:text="borderWidth"
+                    android:textColor="#FFF"/>
+
+                <TextView
+                    android:id="@+id/tv_borderWidth"
+                    android:layout_marginLeft="10dp"
+                    android:text="3dp"
+                    android:textColor="#FFF"/>
+
+                <SeekBar android:id="@+id/sb_borderWidth"/>
+            </TableRow>
+
+            <TableRow
+                android:gravity="center"
+                android:minHeight="20dp">
+
+                <TextView
+                    android:text="corner"
+                    android:textColor="#FFF"/>
+
+                <TextView
+                    android:id="@+id/tv_corner"
+                    android:layout_marginLeft="10dp"
+                    android:text="3dp"
+                    android:textColor="#FFF"/>
+
+                <SeekBar android:id="@+id/sb_corner"/>
+            </TableRow>
+
+            <TableRow
+                android:gravity="center"
+                android:minHeight="20dp">
+
+                <TextView
+                    android:text="breakLineCount"
+                    android:textColor="#FFF"/>
+
+                <TextView
+                    android:id="@+id/tv_breakLineCount"
+                    android:layout_marginLeft="10dp"
+                    android:text="3"
+                    android:textColor="#FFF"/>
+
+                <SeekBar android:id="@+id/sb_breakLineCount"/>
+            </TableRow>
+
+            <TableRow
+                android:gravity="center"
+                android:minHeight="20dp">
+
+                <TextView
+                    android:text="maxLine"
+                    android:textColor="#FFF"/>
+
+                <TextView
+                    android:id="@+id/tv_maxLine"
+                    android:layout_marginLeft="10dp"
+                    android:text="3"
+                    android:textColor="#FFF"/>
+
+                <SeekBar android:id="@+id/sb_maxLine"/>
+            </TableRow>
+
+            <TableRow
+                android:gravity="center"
+                android:minHeight="20dp">
+
+                <TextView
+                    android:text="textSpacing"
+                    android:textColor="#FFF"/>
+
+                <TextView
+                    android:id="@+id/tv_textSpacing"
+                    android:layout_marginLeft="10dp"
+                    android:text="3"
+                    android:textColor="#FFF"/>
+
+                <SeekBar android:id="@+id/sb_textSpacing"/>
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#499979"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hexagonOrientation: "
+                android:textColor="#FFF"/>
+
+            <RadioGroup
+                android:id="@+id/orientation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="HORIZONTAL"
+                    android:textColor="#FFF"/>
+
+                <RadioButton
+                    android:id="@+id/vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="VERTICAL"
+                    android:textColor="#FFF"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#499979"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/enableClick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="是否允许点击"
+                android:textColor="#FFF"/>
+
+            <CheckBox
+                android:id="@+id/borderOverlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="borderOverlay"
+                android:textColor="#FFF"/>
+
+            <CheckBox
+                android:id="@+id/isUseBitmap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="isUseBitmap"
+                android:textColor="#FFF"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#7a7a7a"
+                android:gravity="center">
+
+                <com.lzy.ui.HexagonView
+                    android:id="@+id/hexagon"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:padding="10dp"
+                    android:src="@mipmap/hexagon_image"
+                    app:hexagonBorderColor="#9FFF"
+                    app:hexagonBorderOverlay="false"
+                    app:hexagonBorderWidth="20dp"
+                    app:hexagonBreakLineCount="6"
+                    app:hexagonCorner="20dp"
+                    app:hexagonFillColor="#F00"
+                    app:hexagonMaxLine="3"
+                    app:hexagonOrientation="vertical"
+                    app:hexagonText="asdfasdfadsfad"
+                    app:hexagonTextColor="#FFF"
+                    app:hexagonTextSize="30sp"
+                    app:hexagonTextSpacing="0dp"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#3f7ca4"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/checkImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="选择图片(系统)"/>
+
+                <Button
+                    android:id="@+id/textColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="textColor"/>
+
+                <Button
+                    android:id="@+id/borderColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="borderColor"/>
+
+                <Button
+                    android:id="@+id/fillColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="fillColor"/>
+
+                <Button
+                    android:id="@+id/backColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="backColor"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入文本"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#737373"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:stretchColumns="2">
+
+            <TableRow
+                android:gravity="center"
+                android:minHeight="20dp">
+
+                <TextView
+                    android:text="width"
+                    android:textColor="#FFF"/>
+
+                <TextView
+                    android:id="@+id/tv_width"
+                    android:layout_marginLeft="10dp"
+                    android:text="3sp"
+                    android:textColor="#FFF"/>
+
+                <SeekBar android:id="@+id/sb_width"/>
+            </TableRow>
+
+            <TableRow
+                android:gravity="center"
+                android:minHeight="20dp">
+
+                <TextView
+                    android:text="height"
+                    android:textColor="#FFF"/>
+
+                <TextView
+                    android:id="@+id/tv_height"
+                    android:layout_marginLeft="10dp"
+                    android:text="3dp"
+                    android:textColor="#FFF"/>
+
+                <SeekBar android:id="@+id/sb_height"/>
+            </TableRow>
+
+            <TableRow
+                android:gravity="center"
+                android:minHeight="20dp">
+
+                <TextView
+                    android:text="padding"
+                    android:textColor="#FFF"/>
+
+                <TextView
+                    android:id="@+id/tv_padding"
+                    android:layout_marginLeft="10dp"
+                    android:text="3dp"
+                    android:textColor="#FFF"/>
+
+                <SeekBar android:id="@+id/sb_padding"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

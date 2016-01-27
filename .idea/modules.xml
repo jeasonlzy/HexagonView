@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HexagonView.iml" filepath="$PROJECT_DIR$/HexagonView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_ColorPicker/library_ColorPicker.iml" filepath="$PROJECT_DIR$/library_ColorPicker/library_ColorPicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_hexagonview/library_hexagonview.iml" filepath="$PROJECT_DIR$/library_hexagonview/library_hexagonview.iml" />
+    </modules>
+  </component>
+</project>
