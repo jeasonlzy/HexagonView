@@ -2,7 +2,7 @@
 六边形带圆角的自定义View，支持图文混排，点击区域，水平垂直方向切换，圆角大小等各种属性
 
 ## 演示
- ![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo.png)![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo1.gif)![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo2.gif)
+ ![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo0.png)![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo1.gif)![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo2.gif)
 
 
 ## 1.参数含义
