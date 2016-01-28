@@ -4,8 +4,18 @@
 ## 演示
  ![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo0.png)![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo2.gif)![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo1.gif)
 
+## 用法
+由于该控件不是矩形，所以想要点击事件只在六边形区域有效，需要设置`OnHexagonViewClickListener`，代码如下：
+```java
+ hexagon.setOnHexagonClickListener(new HexagonView.OnHexagonViewClickListener() {
+	@Override
+	public void onClick(View view) {
+	    Toast.makeText(HexagonActivity.this, "点击六边形了！", Toast.LENGTH_SHORT).show();
+	}
+});
+```
 
-## 1.参数含义
+## 参数含义
 
 <table>
   <tdead>
