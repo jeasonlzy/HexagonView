@@ -194,8 +194,8 @@ public class HexagonView extends ImageView {
     private void setup() {
         if (getWidth() == 0 && getHeight() == 0) return;
 
-        int drawWidth = getWidth() - getPaddingLeft() - getPaddingRight();
-        int drawHeight = getHeight() - getPaddingTop() - getPaddingBottom();
+        int drawWidth = Math.max(getWidth() - getPaddingLeft() - getPaddingRight(), 0);
+        int drawHeight = Math.max(getHeight() - getPaddingTop() - getPaddingBottom(), 0);
         mTranslateX = getPaddingLeft();
         mTranslateY = getPaddingTop();
         if (hexagonOrientation == VERTICAL) {
@@ -259,8 +259,10 @@ public class HexagonView extends ImageView {
 
         //获取文字的bitmap
         Bitmap textBitmap = getTextBitmap(lineList);
-        BitmapShader textBitmapShader = new BitmapShader(textBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
-        mTextBitmapPaint.setShader(textBitmapShader);
+        if (textBitmap != null) {
+            BitmapShader textBitmapShader = new BitmapShader(textBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+            mTextBitmapPaint.setShader(textBitmapShader);
+        }
 
         if (mBitmap != null) {
             mBitmapShader = new BitmapShader(mBitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
@@ -283,6 +285,7 @@ public class HexagonView extends ImageView {
      * 根据文字的行数，得到绘制有文字的 bitmap，为了方便用path切割图片，所以先把文字转成了bitmap
      */
     private Bitmap getTextBitmap(List<String> lineList) {
+        if (mHexagonWidth <= 0 || mHexagonHeight <= 0) return null;
         Bitmap target = Bitmap.createBitmap((int) mHexagonWidth, (int) mHexagonHeight, BITMAP_CONFIG);
         Canvas canvas = new Canvas(target);
         for (int i = 0; i < lineList.size(); i++) {
@@ -396,10 +399,8 @@ public class HexagonView extends ImageView {
     @Override
     protected void onDraw(Canvas canvas) {
         // 有效的绘制区域已经没有了，就不绘制了
-        if (hexagonOrientation == VERTICAL && (mBitmapPointList.get(1).x - mBitmapPointList.get(5).x <= 0))
-            return;
-        if (hexagonOrientation == HORIZONTAL && (mBitmapPointList.get(5).y - mBitmapPointList.get(1).y <= 0))
-            return;
+        if (hexagonOrientation == VERTICAL && (mBitmapPointList.get(1).x - mBitmapPointList.get(5).x <= 0)) return;
+        if (hexagonOrientation == HORIZONTAL && (mBitmapPointList.get(5).y - mBitmapPointList.get(1).y <= 0)) return;
 
         canvas.translate(mTranslateX, mTranslateY);       //平移画布，保证居中显示
         if (mBitmap == null) canvas.drawPath(mBitmapPath, mFillPaint);  //画背景色，只在没有图片的时候画
@@ -453,10 +454,8 @@ public class HexagonView extends ImageView {
     private Path getBorderPath(List<PointF> pointList, int borderWidth) {
         //为避免计算误差，小于等于0 的时候，直接使用外层边框
         if (borderWidth <= 0) return mDrawPath;
-        if (hexagonOrientation == VERTICAL)
-            return makeVerticalHexagonPath(pointList, borderWidth / 2.0f, null);
-        if (hexagonOrientation == HORIZONTAL)
-            return makeHorizontalHexagonPath(pointList, borderWidth / 2.0f, null);
+        if (hexagonOrientation == VERTICAL) return makeVerticalHexagonPath(pointList, borderWidth / 2.0f, null);
+        if (hexagonOrientation == HORIZONTAL) return makeHorizontalHexagonPath(pointList, borderWidth / 2.0f, null);
         return null;
     }
 
@@ -469,8 +468,7 @@ public class HexagonView extends ImageView {
         //true表示边框会覆盖一部分图片，false表示边框不会覆盖在图片之上
         if (borderOverlay) return mDrawPath;
         mBitmapPointList = new ArrayList<>();
-        if (hexagonOrientation == VERTICAL)
-            return makeVerticalHexagonPath(pointList, borderWidth, mBitmapPointList);
+        if (hexagonOrientation == VERTICAL) return makeVerticalHexagonPath(pointList, borderWidth, mBitmapPointList);
         if (hexagonOrientation == HORIZONTAL)
             return makeHorizontalHexagonPath(pointList, borderWidth, mBitmapPointList);
         return null;
