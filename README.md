@@ -7,7 +7,7 @@
 ## 1.用法
 使用前，对于Android Studio的用户，可以选择添加:
 ```java
-	com.lzy.widget:view-core:0.1.4
+	compile 'com.lzy.widget:view-core:0.1.4'
 ```
 或者使用
 ```java
