@@ -4,8 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HexagonView.iml" filepath="$PROJECT_DIR$/HexagonView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library_ColorPicker/library_ColorPicker.iml" filepath="$PROJECT_DIR$/library_ColorPicker/library_ColorPicker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library_hexagonview/library_hexagonview.iml" filepath="$PROJECT_DIR$/library_hexagonview/library_hexagonview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hexagonview/hexagonview.iml" filepath="$PROJECT_DIR$/hexagonview/hexagonview.iml" />
     </modules>
   </component>
 </project>

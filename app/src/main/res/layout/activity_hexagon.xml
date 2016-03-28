@@ -201,7 +201,7 @@
                 android:background="#7a7a7a"
                 android:gravity="center">
 
-                <com.lzy.ui.HexagonView
+                <com.lzy.widget.HexagonView
                     android:id="@+id/hexagon"
                     android:layout_width="200dp"
                     android:layout_height="200dp"

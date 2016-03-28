@@ -4,7 +4,17 @@
 ## 演示
  ![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo0.png)![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo2.gif)![image](https://github.com/jeasonlzy0216/HexagonView/blob/master/screenshots/demo1.gif)
 
-## 用法
+## 1.用法
+使用前，对于Android Studio的用户，可以选择添加:
+```java
+	com.lzy.widget:view-core:0.1.4
+```
+或者使用
+```java
+    compile project(':hexagonview')
+```
+
+## 2.注意
 由于该控件不是矩形，所以想要点击事件只在六边形区域有效，需要设置`OnHexagonViewClickListener`，代码如下：
 ```java
  hexagon.setOnHexagonClickListener(new HexagonView.OnHexagonViewClickListener() {
@@ -15,7 +25,7 @@
 });
 ```
 
-## 参数含义
+## 3.参数含义
 
 <table>
   <tdead>

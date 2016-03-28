@@ -21,12 +21,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.lzy.ui.HexagonView;
-
-import net.margaritov.colorpicker.ColorPickerDialog;
-
-import java.io.File;
-import java.util.ArrayList;
+import com.lzy.colorpicker.ColorPickerDialog;
+import com.lzy.widget.HexagonView;
 
 public class HexagonActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener, RadioGroup.OnCheckedChangeListener, CompoundButton.OnCheckedChangeListener, TextWatcher, View.OnClickListener {
 
